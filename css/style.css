@@ -451,7 +451,7 @@ main.home {
   }
 
   .site-nav a {
-    font-size: 9px;
+    font-size: 13px;
   }
 
   .container {
@@ -468,6 +468,9 @@ main.home {
   }
 
   .gallery {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
     gap: 24px;
   }
 }
