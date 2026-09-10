@@ -302,6 +302,7 @@ main {
 
 .tags {
   margin-top: 32px;
+  margin-left: 96px;
   font-style: italic;
   color: var(--fg);
   font-size: var(--type-size);
