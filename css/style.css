@@ -345,6 +345,10 @@ main {
   color: var(--fg);
 }
 
+.contact-intro + .contact-intro {
+  margin-top: 2px;
+}
+
 .contact-email {
   display: inline-block;
   margin-top: 24px;
