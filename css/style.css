@@ -348,7 +348,7 @@ main {
 .contact-email {
   display: inline-block;
   margin-top: 24px;
-  margin-left: 96px;
+  margin-left: 460px;
   font-size: var(--type-size);
   line-height: var(--type-lh);
   font-weight: var(--type-weight);
@@ -357,7 +357,7 @@ main {
 
 .contact-email__hint {
   margin-top: 8px;
-  margin-left: 96px;
+  margin-left: 460px;
   font-size: var(--type-size);
   line-height: var(--type-lh);
   color: var(--muted);
