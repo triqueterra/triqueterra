@@ -14,7 +14,6 @@ const ARCHIVE_IMAGES = [
   "archive-09.png",
   "archive-10.png",
   "archive-11.png",
-  "archive-12.jpg",
   "archive-13.jpg",
   "archive-14.jpg",
   "archive-15.png",
