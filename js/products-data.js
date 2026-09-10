@@ -33,8 +33,8 @@ const PRODUCTS = [
   {
     id: "jaedan01",
     number: "01",
-    kr: "裁斷",
-    en: "JAE-DAN",
+    kr: "裁斷_01",
+    en: "JAE-DAN_01",
     size: "16 x 11.5 x 26 cm",
     material: "Black glazed ceramic",
     main: "jaedan01-main.png",
@@ -49,6 +49,7 @@ const PRODUCTS = [
     size: "20 x 20 x 25.5 cm",
     material: "Black glazed ceramic",
     main: "lock-main.png",
+    right: "lock-right.png",
   },
   {
     id: "key",

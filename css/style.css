@@ -247,8 +247,8 @@ main {
 }
 
 .product-detail__caption {
-  max-width: 1000px;
-  margin: 32px auto 0;
+  max-width: 420px;
+  margin: 20px auto 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

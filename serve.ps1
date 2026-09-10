@@ -25,6 +25,11 @@ while ($listener.IsListening) {
     if ($path -eq "/") { $path = "/index.html" }
     $filePath = Join-Path $root ($path.TrimStart("/"))
 
+    # Mimic Vercel's cleanUrls locally: try appending .html when the extensionless path has no file
+    if (-not (Test-Path $filePath -PathType Leaf) -and [System.IO.Path]::GetExtension($filePath) -eq "") {
+        $filePath = "$filePath.html"
+    }
+
     if (Test-Path $filePath -PathType Leaf) {
         $ext = [System.IO.Path]::GetExtension($filePath).ToLower()
         $contentType = $mime[$ext]

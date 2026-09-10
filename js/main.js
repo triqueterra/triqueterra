@@ -5,7 +5,7 @@ function renderIndexGrid(containerId) {
 
   container.innerHTML = PRODUCTS.map(
     (p) => `
-      <a class="piece" href="product.html?id=${p.id}">
+      <a class="piece" href="/product?id=${p.id}">
         <div class="piece__frame">
           <img src="images/products/${p.main}" alt="T.q.T — ${p.en}" loading="lazy" />
         </div>
