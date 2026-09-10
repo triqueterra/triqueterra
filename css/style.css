@@ -335,13 +335,33 @@ main {
 }
 
 /* Contact */
-.contact-email {
-  display: inline-block;
+.contact-intro {
+  max-width: 420px;
   margin-top: 120px;
   font-size: var(--type-size);
   line-height: var(--type-lh);
   font-weight: var(--type-weight);
   letter-spacing: var(--type-ls);
+  color: var(--fg);
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 24px;
+  margin-left: 96px;
+  font-size: var(--type-size);
+  line-height: var(--type-lh);
+  font-weight: var(--type-weight);
+  letter-spacing: var(--type-ls);
+}
+
+.contact-email__hint {
+  margin-top: 8px;
+  margin-left: 96px;
+  font-size: var(--type-size);
+  line-height: var(--type-lh);
+  color: var(--muted);
+  min-height: var(--type-lh);
 }
 
 .contact-email:hover {

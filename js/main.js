@@ -158,4 +158,22 @@ function renderArchiveGrid(rowTopId, rowBottomId) {
 document.addEventListener("DOMContentLoaded", () => {
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
+
+  // Contact 이메일: 메일 앱이 없는 환경에서도 주소를 바로 쓸 수 있도록 클릭 시 클립보드에 복사
+  const emailLink = document.getElementById("contactEmail");
+  const emailHint = document.getElementById("contactEmailHint");
+  if (emailLink && emailHint) {
+    emailLink.addEventListener("click", () => {
+      const address = emailLink.textContent.trim();
+      navigator.clipboard
+        ?.writeText(address)
+        .then(() => {
+          emailHint.textContent = "Copied to clipboard";
+          setTimeout(() => {
+            emailHint.textContent = "";
+          }, 2500);
+        })
+        .catch(() => {});
+    });
+  }
 });
