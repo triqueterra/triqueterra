@@ -1,0 +1,478 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #8a8a8a;
+  --line: #e6e6e6;
+  --header-h: 64px;
+  --gap: 40px;
+  /* triqueterra.com 실측 타이포(nav/caption/tagline 공통): 17.56px / 19.32px / 600 / -0.176px */
+  --type-size: 17px;
+  --type-lh: 19px;
+  --type-ls: -0.01em;
+  --type-weight: 600;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Pretendard", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 0 32px;
+  background: transparent;
+  z-index: 100;
+}
+
+.site-header .logo img {
+  height: 16px;
+  width: auto;
+}
+
+.site-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  font-size: var(--type-size);
+  line-height: var(--type-lh);
+  font-weight: var(--type-weight);
+  letter-spacing: var(--type-ls);
+  color: var(--fg);
+  transition: opacity 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  opacity: 0.45;
+}
+
+/* Main */
+main {
+  padding-top: calc(var(--header-h) + 48px);
+  flex: 1 0 auto;
+}
+
+.container {
+  padding: 0 32px 80px;
+}
+
+/* Grid of pieces */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap) 24px;
+}
+
+.piece {
+  display: block;
+  margin: 0;
+}
+
+.piece__frame {
+  width: 80%;
+  margin: 0 auto;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.piece__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.piece:hover .piece__frame img {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* Archive — two horizontal rows, auto-sliding in opposite directions */
+.archive-main {
+  padding-top: calc(var(--header-h) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.archive-strip {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.archive-strip__track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  will-change: transform;
+}
+
+.archive-strip--row1 .archive-strip__track {
+  animation: marquee-left 50s linear infinite;
+}
+
+.archive-strip--row2 .archive-strip__track {
+  animation: marquee-right 50s linear infinite;
+}
+
+.archive-strip__track figure {
+  flex: none;
+  margin: 0;
+  height: 34vh;
+}
+
+.archive-strip__track img {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: cover;
+  background: #ffffff;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.piece figcaption {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--type-size);
+  line-height: var(--type-lh);
+  font-weight: var(--type-weight);
+  letter-spacing: var(--type-ls);
+  color: var(--fg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.piece:hover figcaption {
+  opacity: 1;
+}
+
+/* Product detail — main이 중앙, left/right이 양옆에 모두 동일한 크기로 대칭 배치 */
+.product-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-layout__main,
+.product-layout__left,
+.product-layout__right {
+  flex: 0 1 320px;
+}
+
+.product-layout img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-detail__caption {
+  max-width: 1000px;
+  margin: 32px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: var(--type-size);
+  line-height: var(--type-lh);
+  font-weight: var(--type-weight);
+  letter-spacing: var(--type-ls);
+  color: var(--fg);
+}
+
+.product-detail__caption > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.product-detail__specs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Info / text pages */
+.page-title {
+  font-size: var(--type-size);
+  line-height: var(--type-lh);
+  font-weight: var(--type-weight);
+  letter-spacing: var(--type-ls);
+  margin-bottom: 28px;
+}
+
+.prose {
+  max-width: 520px;
+  margin-top: 120px;
+  font-size: var(--type-size);
+  line-height: var(--type-lh);
+  font-weight: var(--type-weight);
+  letter-spacing: var(--type-ls);
+}
+
+.info-mark {
+  width: 320px;
+  height: auto;
+  margin-top: 32px;
+}
+
+.prose p {
+  margin: 0 0 20px;
+}
+
+.tags {
+  margin-top: 32px;
+  font-style: italic;
+  color: var(--fg);
+  font-size: var(--type-size);
+  line-height: var(--type-lh);
+  font-weight: var(--type-weight);
+  letter-spacing: var(--type-ls);
+}
+
+/* Stockists / list pages */
+.list {
+  max-width: 520px;
+  margin-top: 120px;
+}
+
+.list li {
+  padding: 3px 0;
+  font-size: var(--type-size);
+  line-height: var(--type-lh);
+  font-weight: var(--type-weight);
+  letter-spacing: -0.03em;
+}
+
+.list li .name {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.list li .meta {
+  color: var(--muted);
+}
+
+/* Contact */
+.contact-email {
+  display: inline-block;
+  margin-top: 120px;
+  font-size: var(--type-size);
+  line-height: var(--type-lh);
+  font-weight: var(--type-weight);
+  letter-spacing: var(--type-ls);
+}
+
+.contact-email:hover {
+  opacity: 0.6;
+}
+
+/* Footer */
+.site-footer {
+  padding: 24px 32px 40px;
+  font-size: 9px;
+  line-height: 1.4;
+  font-weight: 300;
+  letter-spacing: var(--type-ls);
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Home — two full-width columns, one sliding up, one sliding down */
+main.home {
+  padding-top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gallery {
+  /* 3:2 비율에서 세로가 100vh를 넘지 않도록(=스크롤 없이) 가로폭을 제한 */
+  width: min(100%, 150vh);
+  aspect-ratio: 3 / 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;
+  gap: 300px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.gallery-col {
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-col__track {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  will-change: transform;
+}
+
+.gallery-col--up .gallery-col__track {
+  animation: marquee-up 70s linear infinite;
+}
+
+.gallery-col--down .gallery-col__track {
+  animation: marquee-down 70s linear infinite;
+}
+
+.gallery-col__track figure {
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  background: #ffffff;
+}
+
+.gallery-col__track img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+@keyframes marquee-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marquee-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  .site-nav ul {
+    gap: 12px;
+  }
+
+  .site-nav a {
+    font-size: 9px;
+  }
+
+  .container {
+    padding: 0 20px 60px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+  }
+
+  .site-footer {
+    padding: 20px 20px 32px;
+  }
+
+  .gallery {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    gap: 60px;
+  }
+}

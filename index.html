@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>T.q.T</title>
+<meta name="description" content="T.q.T — an object brand by visual artist Guny Lim." />
+<link rel="icon" href="images/logo/favicon.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="index.html">
+    <img src="images/logo/tqt-logo.png" alt="T.q.T" />
+  </a>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="info.html">Info</a></li>
+      <li><a href="works.html">Index</a></li>
+      <li><a href="stockists.html">Stockists</a></li>
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="home">
+  <div class="gallery">
+    <div class="gallery-col gallery-col--up">
+      <div class="gallery-col__track" id="colUp"></div>
+    </div>
+    <div class="gallery-col gallery-col--down">
+      <div class="gallery-col__track" id="colDown"></div>
+    </div>
+  </div>
+</main>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>renderGallery("colUp", "colDown");</script>
+</body>
+</html>
