@@ -18,6 +18,7 @@ const PRODUCTS = [
     material: "Black glazed ceramic",
     main: "mini01-main.png",
     left: "mini01-left.png",
+    right: "mini01-right.png",
   },
   {
     id: "mini02",
