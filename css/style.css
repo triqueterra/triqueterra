@@ -480,6 +480,11 @@ main.home {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --type-size: 14px;
+    --type-lh: 17px;
+  }
+
   .site-header {
     padding: 0 20px;
     gap: 16px;
@@ -490,7 +495,7 @@ main.home {
   }
 
   .site-nav a {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .container {
