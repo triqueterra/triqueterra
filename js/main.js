@@ -10,7 +10,7 @@ function renderIndexGrid(containerId) {
           <img src="images/products/${p.main}" alt="T.q.T — ${p.en}" loading="lazy" />
         </div>
         <figcaption>
-          <span class="piece__title-en">${p.en}</span>
+          <span class="piece__title-en">${p.enDisplay || p.en}</span>
           <span class="piece__title-kr">${p.kr}</span>
         </figcaption>
       </a>`
@@ -39,7 +39,7 @@ function renderProductDetail(containerId) {
     </div>
     <div class="product-detail__caption">
       <div>
-        <span class="piece__title-en">${p.en}</span>
+        <span class="piece__title-en">${p.enDisplay || p.en}</span>
         <span class="piece__title-kr">${p.kr}</span>
       </div>
       <div class="product-detail__specs">
