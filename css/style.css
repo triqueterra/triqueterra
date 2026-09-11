@@ -244,9 +244,15 @@ main {
 
 .product-layout__main,
 .product-layout__left,
-.product-layout__right,
-.product-layout__back {
+.product-layout__right {
   flex: 0 1 320px;
+}
+
+/* .product-layout는 세로(column) 방향 flex라, back은 위쪽 flex-basis(320px)가 아니라
+   실제 가로 폭을 직접 지정해야 main/left/right와 동일한 크기로 나오고 중앙 정렬됨 */
+.product-layout__back {
+  width: 100%;
+  max-width: 320px;
 }
 
 .product-layout img {
