@@ -497,6 +497,22 @@ main.home {
     aspect-ratio: auto;
     gap: 24px;
   }
+
+  /* 데스크탑의 가로 들여쓰기(콜론 정렬)는 모바일 폭에서 화면 밖으로 밀려나 보이지 않으므로,
+     좌측 여백을 없애고 대신 위쪽 여백을 넉넉히 줘서 아래로 내려 분리되어 보이게 함 */
+  .tags,
+  .contact-email,
+  .contact-email__hint {
+    margin-left: 0;
+  }
+
+  .tags {
+    margin-top: 64px;
+  }
+
+  .contact-email {
+    margin-top: 56px;
+  }
 }
 
 @media (max-width: 900px) {
