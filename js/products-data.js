@@ -19,6 +19,7 @@ const PRODUCTS = [
     main: "mini01-main.png",
     left: "mini01-left.png",
     right: "mini01-right.png",
+    back: "mini01-back.png",
   },
   {
     id: "mini02",

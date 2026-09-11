@@ -33,9 +33,12 @@ function renderProductDetail(containerId) {
 
   container.innerHTML = `
     <div class="product-layout">
-      ${slot("left", "left")}
-      ${slot("main", "main")}
-      ${slot("right", "right")}
+      <div class="product-layout__row">
+        ${slot("left", "left")}
+        ${slot("main", "main")}
+        ${slot("right", "right")}
+      </div>
+      ${slot("back", "back")}
     </div>
     <div class="product-detail__caption">
       <div>
