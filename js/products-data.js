@@ -85,4 +85,15 @@ const PRODUCTS = [
     left: "cuboid-left.png",
     right: "cuboid-right.png",
   },
+  {
+    id: "dot",
+    number: "08",
+    kr: "裁斷_도트",
+    en: "JAE-DAN_DOT",
+    size: "9 x 6 x 4 cm",
+    material: "Black glazed<br>Stoneware",
+    main: "dot-main.png",
+    left: "dot-left.png",
+    right: "dot-right.png",
+  },
 ];

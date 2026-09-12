@@ -173,6 +173,10 @@ main {
   animation: marquee-right 50s linear infinite;
 }
 
+.archive-strip:hover .archive-strip__track {
+  animation-play-state: paused;
+}
+
 .archive-strip__track figure {
   flex: none;
   margin: 0;
