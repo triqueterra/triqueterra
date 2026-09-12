@@ -88,8 +88,8 @@ const PRODUCTS = [
   {
     id: "dot",
     number: "08",
-    kr: "裁斷_도트",
-    en: "JAE-DAN_DOT",
+    kr: "裁斷_도트_미니",
+    en: "JAE-DAN_DOT_MINI",
     size: "9 x 6 x 4 cm",
     material: "Black glazed<br>Stoneware",
     main: "dot-main.png",
