@@ -330,9 +330,19 @@ main {
   letter-spacing: var(--type-ls);
 }
 
+.info-bottom {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 32px;
+}
+
+.info-bottom .info-mark {
+  margin-top: 0;
+}
+
 .info-link {
-  margin-top: 4px;
-  margin-left: 460px;
+  flex: none;
+  width: 460px;
   font-size: var(--type-size);
   line-height: var(--type-lh);
   font-weight: var(--type-weight);
@@ -538,10 +548,19 @@ main.home {
   /* 데스크탑의 가로 들여쓰기(콜론 정렬)는 모바일 폭에서 화면 밖으로 밀려나 보이지 않으므로,
      좌측 여백을 없애고 대신 위쪽 여백을 넉넉히 줘서 아래로 내려 분리되어 보이게 함 */
   .tags,
-  .info-link,
   .contact-email,
   .contact-email__hint {
     margin-left: 0;
+  }
+
+  .info-bottom {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .info-link {
+    width: auto;
   }
 
   .tags {
