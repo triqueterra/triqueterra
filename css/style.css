@@ -361,6 +361,10 @@ main {
   margin-bottom: 4px;
 }
 
+.list li a:hover {
+  opacity: 0.6;
+}
+
 .list li .meta {
   color: var(--muted);
 }
